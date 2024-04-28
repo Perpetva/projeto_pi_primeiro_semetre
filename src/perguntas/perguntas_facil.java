@@ -5,7 +5,7 @@ public class perguntas_facil {
 	    return new String[][] {
 	        {"Quem foi o primeiro presidente dos Estados Unidos?", "a", "a) George Washington", "b) Thomas Jefferson", "c) Abraham Lincoln", "d) John F. Kennedy"},
 	        
-	        {"Qual é a montanha mais alta do mundo?", "c", "a) Monte Everest", "b) Monte Kilimanjaro", "c) Monte Everest", "d) Monte K2"},
+	        {"Qual é a montanha mais alta do mundo?", "c", "a) Pão de açucar", "b) Monte Kilimanjaro", "c) Monte Everest", "d) Monte K2"},
 	        
 	        {"Qual é o elemento químico mais abundante na crosta terrestre?", "b", "a) Ferro", "b) Oxigênio", "c) Carbono", "d) Hidrogênio"},
 	        

@@ -17,7 +17,7 @@ public class programa {
 		faz_menu.menu();
 
 		int pontuacao = 0;
-		int qtdePerguntas = 1;
+		int qtdePerguntas = 3;
 
 		String dificuldade = sc.nextLine();
 
@@ -35,7 +35,6 @@ public class programa {
 
 		Random random = new Random();
 
-		// Array com as perguntas e alternativas
 		if (dificuldade.equalsIgnoreCase("facil")) {
 			String[][] questoes = perguntas_facil.getQuestoes();
 			
@@ -111,7 +110,11 @@ public class programa {
 		}
 
 		System.out.println("\nFim do Quiz!");
-		System.out.printf("Sua pontuação total é: %d de %d", pontuacao, qtdePerguntas);
+		System.out.printf("Você acertou %d de %d perguntas", pontuacao, qtdePerguntas);
+		
+		// Da pra fazer a verificação no final.
+		// 'Perna de pau', 'Em treinamento', 'Federado', 'Campeão'. (como no overleaf)
+		// Só precisamos ver qual a condição de cada um.
 
 		sc.close();
 	}
