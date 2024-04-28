@@ -1,23 +1,22 @@
 package projeto_pi_quiz;
 
 import java.util.Scanner;
-import java.util.Random;
 
-import perguntas.perguntas_dificil;
-import perguntas.perguntas_facil;
-import perguntas.perguntas_medio;
+import perguntas.*;
+import funcoes.chama_questao;
 import funcoes.faz_menu;
-import funcoes.faz_questao;
 
 public class programa {
+
+	public static int qtdePerguntas;
+	public static int pontuacao = 0;
 
 	public static void main(String[] args) throws InterruptedException {
 		Scanner sc = new Scanner(System.in);
 
 		faz_menu.menu();
 
-		int pontuacao = 0;
-		int qtdePerguntas = 3;
+		qtdePerguntas = 2;
 
 		String dificuldade = sc.nextLine();
 
@@ -33,80 +32,16 @@ public class programa {
 			}
 		}
 
-		Random random = new Random();
-
 		if (dificuldade.equalsIgnoreCase("facil")) {
-			String[][] questoes = perguntas_facil.getQuestoes();
-			
-			// Array booleano para rastrear perguntas selecionadas
-			boolean[] selecionados = new boolean[questoes.length]; 
-																	
-			// Selecionar aleatoriamente 3 índices de perguntas únicos
-			int[] indicesSelecionados = new int[qtdePerguntas];
-			for (int i = 0; i < qtdePerguntas; i++) {
-				int indice;
-				do {
-					indice = random.nextInt(questoes.length); // Gera um número aleatório entre 0 e o número de questões
-				} while (selecionados[indice]); // Verifica se o número já foi selecionado
-
-				selecionados[indice] = true; // Marca o índice como selecionado
-				indicesSelecionados[i] = indice; // Armazena o índice selecionado
-			}
-
-			// Exibir as perguntas selecionadas aleatoriamente ao usuário
-			for (int indice : indicesSelecionados) {
-				System.out.println("\nPergunta:");
-				if (faz_questao.fazPergunta(questoes[indice], sc))
-					pontuacao++;
-			}
+			chama_questao.chama_pergunta(perguntas_facil.getQuestoes());
 		}
 
 		if (dificuldade.equalsIgnoreCase("medio")) {
-			String[][] questoes = perguntas_medio.getQuestoes();
-
-			boolean[] selecionados = new boolean[questoes.length];
-
-			int[] indicesSelecionados = new int[qtdePerguntas];
-			for (int i = 0; i < qtdePerguntas; i++) {
-				int indice;
-
-				do {
-					indice = random.nextInt(questoes.length);
-				} while (selecionados[indice]);
-
-				selecionados[indice] = true;
-				indicesSelecionados[i] = indice;
-			}
-
-			for (int indice : indicesSelecionados) {
-				System.out.println("\nPergunta:");
-				if (faz_questao.fazPergunta(questoes[indice], sc))
-					pontuacao++;
-			}
+			chama_questao.chama_pergunta(perguntas_medio.getQuestoes());
 		}
 
 		if (dificuldade.equalsIgnoreCase("dificil")) {
-			String[][] questoes = perguntas_dificil.getQuestoes();
-
-			boolean[] selecionados = new boolean[questoes.length];
-
-			int[] indicesSelecionados = new int[qtdePerguntas];
-			for (int i = 0; i < qtdePerguntas; i++) {
-				int indice;
-
-				do {
-					indice = random.nextInt(questoes.length);
-				} while (selecionados[indice]);
-
-				selecionados[indice] = true;
-				indicesSelecionados[i] = indice;
-			}
-
-			for (int indice : indicesSelecionados) {
-				System.out.println("\nPergunta:");
-				if (faz_questao.fazPergunta(questoes[indice], sc))
-					pontuacao++;
-			}
+			chama_questao.chama_pergunta(perguntas_dificil.getQuestoes());
 		}
 
 		System.out.println("\nFim do Quiz!");
