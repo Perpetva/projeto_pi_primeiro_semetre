@@ -1,0 +1,7 @@
+# Eclipse #
+.settings/
+.classpath
+.project
+
+# Arquivos gerados #
+bin/
