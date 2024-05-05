@@ -8,15 +8,13 @@ import funcoes.faz_menu;
 
 public class programa {
 
-	public static int qtdePerguntas;
+	public static int qtdePerguntas = 2;
 	public static int pontuacao = 0;
 
 	public static void main(String[] args) throws InterruptedException {
 		Scanner sc = new Scanner(System.in);
-
+		
 		faz_menu.menu();
-
-		qtdePerguntas = 2;
 
 		String dificuldade = sc.nextLine();
 
@@ -34,13 +32,11 @@ public class programa {
 
 		if (dificuldade.equalsIgnoreCase("facil")) {
 			chama_questao.chama_pergunta(perguntas_facil.getQuestoes());
-		}
-
-		if (dificuldade.equalsIgnoreCase("medio")) {
+			
+		} else if (dificuldade.equalsIgnoreCase("medio")) {
 			chama_questao.chama_pergunta(perguntas_medio.getQuestoes());
-		}
-
-		if (dificuldade.equalsIgnoreCase("dificil")) {
+			
+		} else {
 			chama_questao.chama_pergunta(perguntas_dificil.getQuestoes());
 		}
 

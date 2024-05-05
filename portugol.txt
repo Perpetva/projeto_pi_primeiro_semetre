@@ -1,0 +1,89 @@
+algoritmo projeto_pi_quiz
+
+função fazPergunta(pergunta: vetor de caractere, sc: Scanner) -> logico
+    escreva(pergunta[0]) 
+
+    para i de 2 até tamanho(pergunta) passo 1 faça
+        escreva(pergunta[i])
+    fim_para
+
+    escreva("Escolha a opção correta (a, b, c ou d): ")
+
+    resposta = sc.leiaLinha()
+
+    se resposta.equalsIgnoreCase(pergunta[1]) então
+        escreva("Resposta correta!")
+        retorne verdadeiro
+    senão
+        escreva("Resposta incorreta! A resposta correta é: ", pergunta[1])
+        retorne falso
+    fim_se
+fim_função
+
+função fazMenu()
+    escreva("Bem-vindo ao FUTQUIZ)
+    escreva("Escolha a dificuldade: Facil, Medio ou Dificil")
+fim_função
+
+função chamaPergunta(a: matriz de caracteres)
+    aleatorio = novo Random()
+    sc = novo Scanner()
+    
+    questoes = a
+
+    selecionados = novo vetor[booleano] com tamanho[tamanho(questoes)]
+
+    indicesSelecionados := novo vetor[inteiro] com tamanho[programa.qtdePerguntas]
+    para i de 0 até programa.qtdePerguntas-1 passo 1 faça
+        repita
+            indice = aleatorio.nextInt(tamanho(questoes)) 
+        até que não selecionados[indice] 
+
+        selecionados[indice] = verdadeiro 
+        indicesSelecionados[i] = indice 
+    fim_para
+
+    para cada indice em indicesSelecionados faça
+        escreva("\nPergunta:")
+        se fazPergunta(questoes[indice], sc) então
+            programa.pontuacao := programa.pontuacao + 1
+        fim_se
+    fim_para
+fim_função
+
+algoritmo principal
+    qtdePerguntas = x
+    pontuacao = 0
+
+    fazMenu()
+
+    escreva("Escolha a dificuldade: ")
+    dificuldade = leiaLinha()
+
+    enquanto (não (dificuldade.equalsIgnoreCase("facil")) e não (dificuldade.equalsIgnoreCase("medio")) e não (dificuldade.equalsIgnoreCase("dificil"))) faça
+        escreva("Você digitou algo diferente de Facil, Medio ou Dificil\nTente novamente.\nCaso queira sair do programa digite 'Sair'")
+        dificuldade = leiaLinha()
+        
+        se dificuldade.equalsIgnoreCase("sair") então
+            escreva("Encerrando o programa...")
+            aguarde(3000)
+            escreva("Programa encerrado.")
+            pare
+        fim_se
+    fim_enquanto
+
+    se dificuldade.equalsIgnoreCase("facil") então
+        chamaPergunta(perguntas_facil.getQuestoes())
+    fim_se
+
+    se dificuldade.equalsIgnoreCase("medio") então
+        chamaPergunta(perguntas_medio.getQuestoes())
+    fim_se
+
+    se dificuldade.equalsIgnoreCase("dificil") então
+        chamaPergunta(perguntas_dificil.getQuestoes())
+    fim_se
+
+    escreva("\nFim do Quiz!")
+    escreva("Você acertou ", pontuacao, " de ", qtdePerguntas)
+fim_algoritmo
