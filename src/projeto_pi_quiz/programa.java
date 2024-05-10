@@ -8,8 +8,9 @@ import funcoes.faz_menu;
 
 public class programa {
 
-	public static int qtdePerguntas = 2;
-	public static int pontuacao = 0;
+	//globais
+	public static int qtdePerguntas = 3;
+	public static int pontuacao = 0; // Não mexer
 
 	public static void main(String[] args) throws InterruptedException {
 		Scanner sc = new Scanner(System.in);

@@ -19,6 +19,7 @@ public class faz_questao {
 		if (resposta.equalsIgnoreCase(pergunta[1])) {
 			System.out.println("Resposta correta!"); 
 			return true; 
+			
 		} else {
 			System.out.println("Resposta incorreta! A resposta correta é: " + pergunta[1]);
 			return false;

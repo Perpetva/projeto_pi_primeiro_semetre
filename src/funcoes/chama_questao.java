@@ -15,7 +15,7 @@ public class chama_questao {
 		// Array booleano para rastrear perguntas selecionadas
 		boolean[] selecionados = new boolean[questoes.length];
 
-		// Selecionar aleatoriamente 3 índices de perguntas únicos
+		// Selecionar aleatoriamente X índices de perguntas únicos
 		int[] indicesSelecionados = new int[programa.qtdePerguntas];
 		for (int i = 0; i < programa.qtdePerguntas; i++) {
 			int indice;

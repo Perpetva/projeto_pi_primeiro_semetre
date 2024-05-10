@@ -1,70 +1,72 @@
-algoritmo projeto_pi_quiz
+programa {
 
-função fazPergunta(pergunta: vetor de caractere, sc: Scanner) -> logico
-    escreva(pergunta[0]) 
+funcao fazMenu(){
+    escreva("Bem vindo ao, FUTQUIZ")
+    escreva("Escolha a dificuldade: Facil, Medio ou Dificil")
+fim_funcao
+}
 
-    para i de 2 até tamanho(pergunta) passo 1 faça
+funcao chamaPergunta(a){
+    aleatorio := novo Random()
+    sc := novo Scanner()
+    
+    questoes := a
+
+    selecionados := novo vetor[booleano] com tamanho[tamanho(questoes)]
+
+    indicesSelecionados := novo vetor[inteiro] com tamanho[programa.qtdePerguntas]
+    para i de 0 ate programa.qtdePerguntas-1 passo 1 faca
+        repita
+            indice := aleatorio.nextInt(tamanho(questoes))
+        ate que nao selecionados[indice] 
+
+        selecionados[indice] := verdadeiro 
+        indicesSelecionados[i] := indice 
+    fim_para
+
+    para cada indice em indicesSelecionados faca
+        escreva("\nPergunta:")
+        se fazPergunta(questoes[indice], sc) entao
+            programa.pontuacao := programa.pontuacao + 1
+        fim_se
+    fim_para
+fim_funcao
+
+funcao fazPergunta(pergunta, sc) -> logico
+    escreva(pergunta) 
+
+    para i de 2 ate tamanho(pergunta) passo 1 faca
         escreva(pergunta[i])
     fim_para
 
     escreva("Escolha a opção correta (a, b, c ou d): ")
 
-    resposta = sc.leiaLinha()
+    resposta := sc.leiaLinha()
 
-    se resposta.equalsIgnoreCase(pergunta[1]) então
+    se resposta.equalsIgnoreCase(correta) entao
         escreva("Resposta correta!")
         retorne verdadeiro
-    senão
-        escreva("Resposta incorreta! A resposta correta é: ", pergunta[1])
+    senao
+        escreva("Resposta incorreta! A resposta correta é: ", correta)
         retorne falso
     fim_se
-fim_função
-
-função fazMenu()
-    escreva("Bem-vindo ao FUTQUIZ)
-    escreva("Escolha a dificuldade: Facil, Medio ou Dificil")
-fim_função
-
-função chamaPergunta(a: matriz de caracteres)
-    aleatorio = novo Random()
-    sc = novo Scanner()
-    
-    questoes = a
-
-    selecionados = novo vetor[booleano] com tamanho[tamanho(questoes)]
-
-    indicesSelecionados := novo vetor[inteiro] com tamanho[programa.qtdePerguntas]
-    para i de 0 até programa.qtdePerguntas-1 passo 1 faça
-        repita
-            indice = aleatorio.nextInt(tamanho(questoes)) 
-        até que não selecionados[indice] 
-
-        selecionados[indice] = verdadeiro 
-        indicesSelecionados[i] = indice 
-    fim_para
-
-    para cada indice em indicesSelecionados faça
-        escreva("\nPergunta:")
-        se fazPergunta(questoes[indice], sc) então
-            programa.pontuacao := programa.pontuacao + 1
-        fim_se
-    fim_para
-fim_função
+fim_funcao
+}
 
 algoritmo principal
-    qtdePerguntas = x
-    pontuacao = 0
+    qtdePerguntas := 2
+    pontuacao := 0
 
     fazMenu()
 
     escreva("Escolha a dificuldade: ")
-    dificuldade = leiaLinha()
+    dificuldade := leiaLinha()
 
-    enquanto (não (dificuldade.equalsIgnoreCase("facil")) e não (dificuldade.equalsIgnoreCase("medio")) e não (dificuldade.equalsIgnoreCase("dificil"))) faça
+    enquanto (nao (dificuldade.equalsIgnoreCase("facil")) e nao (dificuldade.equalsIgnoreCase("medio")) e nao (dificuldade.equalsIgnoreCase("dificil"))) faca
         escreva("Você digitou algo diferente de Facil, Medio ou Dificil\nTente novamente.\nCaso queira sair do programa digite 'Sair'")
-        dificuldade = leiaLinha()
+        dificuldade := leiaLinha()
         
-        se dificuldade.equalsIgnoreCase("sair") então
+        se dificuldade.equalsIgnoreCase("sair") entao
             escreva("Encerrando o programa...")
             aguarde(3000)
             escreva("Programa encerrado.")
@@ -72,18 +74,21 @@ algoritmo principal
         fim_se
     fim_enquanto
 
-    se dificuldade.equalsIgnoreCase("facil") então
+    se dificuldade.equalsIgnoreCase("facil") entao
         chamaPergunta(perguntas_facil.getQuestoes())
     fim_se
 
-    se dificuldade.equalsIgnoreCase("medio") então
+    se dificuldade.equalsIgnoreCase("medio") entao
         chamaPergunta(perguntas_medio.getQuestoes())
     fim_se
 
-    se dificuldade.equalsIgnoreCase("dificil") então
+    se dificuldade.equalsIgnoreCase("dificil") entao
         chamaPergunta(perguntas_dificil.getQuestoes())
     fim_se
 
     escreva("\nFim do Quiz!")
     escreva("Você acertou ", pontuacao, " de ", qtdePerguntas)
 fim_algoritmo
+
+}
+
