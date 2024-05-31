@@ -14,6 +14,11 @@ public class faz_questao {
 		System.out.print("Escolha a opção correta (a, b, c ou d): ");
 
 		String resposta = sc.nextLine();
+		
+		while (!resposta.equalsIgnoreCase("a") && !resposta.equalsIgnoreCase("b") && !resposta.equalsIgnoreCase("c") && !resposta.equalsIgnoreCase("d")) {
+			System.out.println("Digite a, b, c ou d");
+			resposta = sc.nextLine();
+		}
 
 		// Verifica se a resposta do usuário é igual à resposta correta
 		if (resposta.equalsIgnoreCase(pergunta[1])) {

@@ -8,10 +8,6 @@ import funcoes.faz_menu;
 
 public class programa {
 
-	//globais
-	public static int qtdePerguntas = 3;
-	public static int pontuacao = 0; // Não mexer
-
 	public static void main(String[] args) throws InterruptedException {
 		Scanner sc = new Scanner(System.in);
 		
@@ -40,9 +36,6 @@ public class programa {
 		} else {
 			chama_questao.chama_pergunta(perguntas_dificil.getQuestoes());
 		}
-
-		System.out.println("\nFim do Quiz!");
-		System.out.printf("Você acertou %d de %d perguntas", pontuacao, qtdePerguntas);
 		
 		// Da pra fazer a verificação no final.
 		// 'Perna de pau', 'Em treinamento', 'Federado', 'Campeão'. (como no overleaf)

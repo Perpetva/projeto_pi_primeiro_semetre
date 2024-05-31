@@ -3,8 +3,6 @@ package funcoes;
 import java.util.Random;
 import java.util.Scanner;
 
-import projeto_pi_quiz.programa;
-
 public class chama_questao {
 	public static void chama_pergunta (String[][] a) {
 		Scanner sc = new Scanner(System.in);
@@ -12,12 +10,15 @@ public class chama_questao {
 		
 		String[][] questoes = a;
 
+		int pontuacao = 0;
+		int qtdePerguntas = 5;
+
 		// Array booleano para rastrear perguntas selecionadas
 		boolean[] selecionados = new boolean[questoes.length];
 
 		// Selecionar aleatoriamente X índices de perguntas únicos
-		int[] indicesSelecionados = new int[programa.qtdePerguntas];
-		for (int i = 0; i < programa.qtdePerguntas; i++) {
+		int[] indicesSelecionados = new int[qtdePerguntas];
+		for (int i = 0; i < qtdePerguntas; i++) {
 			int indice;
 
 			do {
@@ -29,11 +30,16 @@ public class chama_questao {
 		}
 
 		// Exibir as perguntas selecionadas aleatoriamente ao usuário
-		for (int indice : indicesSelecionados) {
-			System.out.println("\nPergunta:");
-			if (faz_questao.fazPergunta(questoes[indice], sc))
-				programa.pontuacao++;
+		for (int i = 0; i < indicesSelecionados.length; i++) {
+			System.out.printf("\n%dª Pergunta:\n", i +1);
+			int indice = indicesSelecionados[i];
+			
+			if (faz_questao.fazPergunta(questoes[indice], sc)) {
+				pontuacao++;
+			}
 		}
+		System.out.printf("\nO quiz acabou!\n"
+				+ "Você acertou %d de %d perguntas!", pontuacao, qtdePerguntas);
 		
 		sc.close();
 	}
