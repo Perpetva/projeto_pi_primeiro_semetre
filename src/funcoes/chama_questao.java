@@ -11,7 +11,7 @@ public class chama_questao {
 		String[][] questoes = a;
 
 		int pontuacao = 0;
-		int qtdePerguntas = 5;
+		int qtdePerguntas = 15;
 
 		// Array booleano para rastrear perguntas selecionadas
 		boolean[] selecionados = new boolean[questoes.length];
@@ -39,7 +39,8 @@ public class chama_questao {
 			}
 		}
 		System.out.printf("\nO quiz acabou!\n"
-				+ "Você acertou %d de %d perguntas!", pontuacao, qtdePerguntas);
+				+ "Você acertou %d de %d perguntas!\n\nParabéns! Você é %s!", pontuacao, qtdePerguntas, verificacao.verificador(pontuacao));
+	
 		
 		sc.close();
 	}

@@ -41,7 +41,7 @@ public class perguntas_facil {
 	        
 	        {"Qual time inglês é conhecido como 'Os Diabos Vermelhos'?", "a", "a) Manchester United", "b) Liverpool", "c) Arsenal", "d) Chelsea"},
 	        
-	        {"Qual jogador é famoso por marcar o 'Gol de Mão' na Copa do Mundo de 1986?", "c", "a) Pelé", "b) Zinedine Zidane", "c) Diego Maradona", "d) Lionel Messi"},
+	        {"Qual o nome do principal campeonato de pontos corridos no Brasil?", "c", "a) Copa do Brasil", "b)Libertadores", "c) Campeonato Brasileiro", "d) Paulistão"},
 	        
 	        {"Qual é o maior artilheiro da história da Liga dos Campeões da UEFA?", "b", "a) Pelé", "b) Cristiano Ronaldo", "c) Lionel Messi", "d) Robert Lewandowski"},
 	        
@@ -69,7 +69,7 @@ public class perguntas_facil {
 	        
 	        {"Qual jogador francês marcou um hat-trick na final da Copa do Mundo de 1998?", "c", "a) Thierry Henry", "b) David Trezeguet", "c) Zinedine Zidane", "d) Didier Deschamps"},
 	        
-	        {"Qual jogador é conhecido como 'Fenômeno'?", "a", "a) Ronaldo", "b) Ronaldinho Gaúcho", "c) Romário", "d) Rivaldo"},
+	        {"Qual foi o último jogador brasileiro que ganhou o prêmio de melhor jogador do mundo?", "c", "a) Ronaldo", "b)pelé", "c) Kaká", "d) Ronaldinho"},
 	        
 	        {"Quantas vezes o Brasil ganhou a Copa do Mundo?", "d", "a) 3", "b) 4", "c) 6", "d) 5"},
 	        

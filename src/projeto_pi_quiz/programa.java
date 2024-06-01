@@ -37,10 +37,6 @@ public class programa {
 			chama_questao.chama_pergunta(perguntas_dificil.getQuestoes());
 		}
 		
-		// Da pra fazer a verificação no final.
-		// 'Perna de pau', 'Em treinamento', 'Federado', 'Campeão'. (como no overleaf)
-		// Só precisamos ver qual a condição de cada um.
-
 		sc.close();
 	}
 }
