@@ -23,7 +23,7 @@ public class perguntas_medio {
 
 			{"Qual jogador detém o recorde de mais gols em uma única Copa do Mundo?", "a", "a) Just Fontaine", "b) Pelé", "c) Ronaldo", "d) Miroslav Klose"},
 
-			{"Quem é o jogador mais jovem a marcar um gol em uma Copa do Mundo?", "b", "a) Neymar", "b) Pelé", "c) Kylian Mbappé", "d) Lionel Messi"},
+			{"Quem foi o primeiro jogador a ganhar a Chuteira de Ouro (Golden Boot) na Copa do Mundo?", "a", "a) Just Fontaine", "b) Eusébio", "c) Gerd Müller", "d) Paolo Rossi"},
 
 			{"Qual é o clube mais antigo do mundo ainda em atividade?", "a", "a) Sheffield FC", "b) Notts County", "c) Real Madrid", "d) Liverpool"},
 

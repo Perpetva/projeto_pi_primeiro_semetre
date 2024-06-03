@@ -10,13 +10,13 @@ public class chama_questao {
 		
 		String[][] questoes = a;
 
-		int pontuacao = 0;
-		int qtdePerguntas = 15;
+		int pontuacao = 0; // Não mexer!!!
+		int qtdePerguntas = 15; // Não mexer!!!
 
 		// Array booleano para rastrear perguntas selecionadas
 		boolean[] selecionados = new boolean[questoes.length];
 
-		// Selecionar aleatoriamente X índices de perguntas únicos
+		// Selecionar aleatoriamente os índices de perguntas únicos
 		int[] indicesSelecionados = new int[qtdePerguntas];
 		for (int i = 0; i < qtdePerguntas; i++) {
 			int indice;
@@ -39,9 +39,8 @@ public class chama_questao {
 			}
 		}
 		System.out.printf("\nO quiz acabou!\n"
-				+ "Você acertou %d de %d perguntas!\n\nParabéns! Você é %s!", pontuacao, qtdePerguntas, verificacao.verificador(pontuacao));
+				+ "Parabéns! Você acertou %d de %d perguntas!\n\nVocê é %s!", pontuacao, qtdePerguntas, verificacao.verificador(pontuacao));
 	
-		
 		sc.close();
 	}
 }

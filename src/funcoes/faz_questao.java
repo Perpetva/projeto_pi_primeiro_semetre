@@ -6,7 +6,7 @@ public class faz_questao {
 	public static boolean fazPergunta(String[] pergunta, Scanner sc) {
 		System.out.println(pergunta[0]); 
 
-		// Imprime as alternativas dinamicamente
+		// Imprime as alternativas 
 		for (int i = 2; i < pergunta.length; i++) {
 			System.out.println(pergunta[i]);
 		}
